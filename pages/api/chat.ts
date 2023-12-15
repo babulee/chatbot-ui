@@ -10,10 +10,11 @@ export const config = {
 
 const handler = async (req: Request): Promise<Response> => {
   try {
-    const { model, messages, key, prompt, temperature } = (await req.json()) as ChatBody;
+    // const { model, messages, key, prompt, temperature } = (await req.json()) as ChatBody;
 
     const requestBody = (await req.json()) as ChatBody;
     console.log("Received request with body:", requestBody);
+    const { model, messages, key, prompt, temperature } = requestBody;
     
     let promptToSend = prompt;
     if (!promptToSend) {
