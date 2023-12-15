@@ -12,6 +12,9 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { model, messages, key, prompt, temperature } = (await req.json()) as ChatBody;
 
+    const requestBody = (await req.json()) as ChatBody;
+    console.log("Received request with body:", requestBody);
+    
     let promptToSend = prompt;
     if (!promptToSend) {
       promptToSend = DEFAULT_SYSTEM_PROMPT;
