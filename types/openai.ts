@@ -11,7 +11,6 @@ export interface OpenAIModel {
 
 export enum OpenAIModelID {
   GPT_3_5 = 'mistral-tiny',
-  GPT_3_5_AZ = 'gpt-35-turbo',
   GPT_4 = 'mistral-small',
   GPT_4_32K = 'mistral-medium',
 }
@@ -25,12 +24,6 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
     name: 'Mistral-7B-v0.2',
     maxLength: 12000,
     tokenLimit: 8000,
-  },
-  [OpenAIModelID.GPT_3_5_AZ]: {
-    id: OpenAIModelID.GPT_3_5_AZ,
-    name: 'GPT-3.5',
-    maxLength: 12000,
-    tokenLimit: 4000,
   },
   [OpenAIModelID.GPT_4]: {
     id: OpenAIModelID.GPT_4,
